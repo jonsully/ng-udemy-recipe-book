@@ -1,1 +1,46 @@
-<p>recipe-detail works!</p>
+<div *ngIf="this.recipeDetails; else nodata">
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="{{this.recipeDetails.imagePath}}" alt="" class="img-responsive">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>{{this.recipeDetails.name}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="dropdown" appDropdown>
+                <button class="btn btn-primary dropdown-toggle" type="button" appDropdown>Manage Recipe</button>
+                <ul class="dropdown-menu">
+                    <li><a style="cursor: pointer" class="dropdown-item"
+                            (click)="sendToList(this.recipeDetails.ingredients)">To
+                            Shopping list</a></li>
+                    <li><a style="cursor: pointer" class="dropdown-item" (click)="sendToList()">To
+                            Shopping list</a></li>
+                    <li><a href="#" class="dropdown-item">Edit Recipe</a></li>
+                    <li><a href="#" class="dropdown-item">Delete Recipe</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="class-xs-12">
+            <p>{{this.recipeDetails.description}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let ingredient of this.recipeDetails.ingredients">
+                    {{ ingredient.name + ' ' + ingredient.amount}}
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<ng-template #nodata>
+    <h1>No Recipe Selected</h1>
+</ng-template>

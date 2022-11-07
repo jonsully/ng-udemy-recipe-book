@@ -1,0 +1,12 @@
+.navbar {
+    padding: 0 20px 0 0;
+    height: 60px
+}
+
+.navbar a {
+    padding: 18px;
+}
+
+.active {
+    background-color: rgba(0, 0, 0, .075);
+}

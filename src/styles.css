@@ -2,3 +2,8 @@
 h2 {
     font-size: 72px;
 }
+
+/* this is a shim to allow easy control of bootstrap 5 dropdowns using the appDropdown directive */
+.show ul {
+    display: block;
+}
