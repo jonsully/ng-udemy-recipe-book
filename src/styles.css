@@ -7,3 +7,8 @@ h2 {
 .show ul {
     display: block;
 }
+
+a {
+    cursor: pointer;
+
+}

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
-import { RecipeService } from '../../recipe.service';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Recipe } from '../../recipe.model';
+import { RecipeService } from '../../recipe.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -13,27 +13,17 @@ export class RecipeItemComponent implements OnInit {
   paramsSubscription: Subscription;
 
   constructor(
-    private recipeService: RecipeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private recipeService: RecipeService
   ) {}
 
   @Input() recipeData: Recipe;
   @Input() recipeIndex: number;
 
   ngOnInit() {
-    // this.route.params.subscribe((params: Params) => {});
-    console.log(this.recipeData);
-    // this.route.snapshot.params['id'];
     // console.log(this.route.snapshot.params['id']);
+    // this.route.params.subscribe((params: Params) => {});
+    // this.route.snapshot.params['id'];
+    // this.recipeService.activeRecipe = this.route.snapshot.params['id'];
   }
-
-  // onSelected(id) {
-  //   // this.recipeService.recipeSelected.emit(this.recipeData);
-  //   // this.route.snapshot.params['id'];
-  //   // console.log(this.recipeService.getRecipeDetail(id));
-  // }
-
-  // testClick() {
-  //   console.log('Clicked item ' + this.recipeID);
-  // }
 }

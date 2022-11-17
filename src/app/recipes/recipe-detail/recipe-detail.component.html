@@ -1,41 +1,43 @@
 <div *ngIf="this.recipeDetails; else nodata">
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-xs-12">
-            <img src="{{this.recipeDetails.imagePath}}" alt="" class="img-responsive">
+            <img src="{{this.recipeDetails.imagePath}}" alt="" class="img-responsive mb-3">
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12">
+    <div class="row justify-content-between mb-3">
+        <div class="col">
             <h1>{{this.recipeDetails.name}}</h1>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
+        <div class="col-3 justify-content-end d-flex">
             <div class="dropdown" appDropdown>
                 <button class="btn btn-primary dropdown-toggle" type="button" appDropdown>Manage Recipe</button>
                 <ul class="dropdown-menu">
                     <li><a style="cursor: pointer" class="dropdown-item"
                             (click)="sendToList(this.recipeDetails.ingredients)">To
                             Shopping list</a></li>
-                    <li><a style="cursor: pointer" class="dropdown-item" (click)="sendToList()">To
-                            Shopping list</a></li>
-                    <li><a href="#" class="dropdown-item">Edit Recipe</a></li>
-                    <li><a href="#" class="dropdown-item">Delete Recipe</a></li>
+                    <li><a class="dropdown-item" (click)="onRecipeEdit()">Edit Recipe</a></li>
+                    <!-- <li><a class="dropdown-item" [routerLink]="['edit']" (click)="onRecipeEdit()">Edit Recipe</a></li> -->
+                    <li><a class="dropdown-item">Delete Recipe</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="class-xs-12">
+    <div class="row mb-3">
+        <div class="col">
             <p>{{this.recipeDetails.description}}</p>
         </div>
     </div>
+    <hr>
+    <div class="row mb-2">
+        <div class="col">
+            <h3 class="h5">Ingredients</h3>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-12">
             <ul class="list-group">
                 <li class="list-group-item" *ngFor="let ingredient of this.recipeDetails.ingredients">
                     {{ ingredient.name + ' ' + ingredient.amount}}
-
                 </li>
             </ul>
         </div>

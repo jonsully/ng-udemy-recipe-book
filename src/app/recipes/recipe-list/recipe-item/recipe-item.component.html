@@ -1,7 +1,9 @@
-<a [routerLink]="['/recipes', recipeData.id]" class="d-flex flex-row align-items-center p-3"
+<!-- <a href="#" class="d-flex flex-row align-items-center p-3" style="text-decoration: none; color: #000;"
+    (click)="testClick()"> -->
+<a [routerLink]="['/recipes', recipeIndex]" class="d-flex flex-row align-items-center p-3"
     style="text-decoration: none; color: #000;">
-    <div class="">{{ recipeIndex }}
-        <h4 class=" list-group-item-heading">{{ recipeData.name }}</h4>
+    <div class="">
+        <h4 class="list-group-item-heading">{{ recipeData.name }}</h4>
         <span class="list-group-item-text">{{ recipeData.description }}</span>
     </div>
     <span class="ms-auto">

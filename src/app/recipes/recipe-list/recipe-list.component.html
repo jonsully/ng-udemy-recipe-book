@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-xs-12">
-        <button class="btn btn-success mt-3">New Recipe</button>
+        <button class="btn btn-success mt-3" (click)="onNewRecipe()">New Recipe</button>
+        <!-- <button class="btn btn-success mt-3" [routerLink]="['/recipes', 'new']">New Recipe</button> -->
     </div>
 </div>
 <hr>
@@ -8,9 +9,10 @@
     <div class="col-xs-12">
         <div class="list-group">
             <app-recipe-item class="list-group-item list-group-item-action"
-                *ngFor="let recipe of recipes; let i = index" [recipeData]="recipe" [recipeIndex]="index"
-                id="{{recipe.id}}">
+                *ngFor="let recipe of recipes; let i = index" [recipeData]="recipe" [recipeIndex]="i" id="{{recipe.id}}"
+                [ngClass]="{'active' : isActive === i}">
             </app-recipe-item>
+            <!-- {{this.isActive}} -->
         </div>
 
     </div>

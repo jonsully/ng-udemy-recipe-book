@@ -3,9 +3,10 @@
     height: 60px
 }
 
-.navbar a {
-    padding: 18px;
+.navbar a.nav-link {
+    padding: 18px !important;
 }
+
 
 .active {
     background-color: rgba(0, 0, 0, .075);

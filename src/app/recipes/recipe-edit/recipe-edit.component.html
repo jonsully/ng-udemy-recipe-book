@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col">
+        <form action="">
+            <fieldset>
+                <div class="form-group mb-3">
+                    <label for="recipeName" class="form-label">Name</label>
+
+                    <input type="text" id="recipeName" name="name" class="form-control" [(ngModel)]="recipeName">
+
+                </div>
+                <div class="form-group mb-3">
+                    <label for="description" class="form-label">Description</label>
+
+
+                    <textarea id="description" name="description" class="form-control"
+                        [ngModel]="recipeDescription"></textarea>
+
+                </div>
+                <div class="form-group mb-5">
+                    <label for="image" class="form-label">Image URL</label>
+
+                    <input type="text" id="image" name="image" class="form-control" [ngModel]="recipeImage">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="h5 mb-3">Ingredients</div>
+                        <app-shopping-list></app-shopping-list>
+                    </div>
+                </div>
+                <hr>
+                <button class="btn btn-primary" (click)="saveRecipe()">Save Recipe</button>
+            </fieldset>
+        </form>
+    </div>
+</div>

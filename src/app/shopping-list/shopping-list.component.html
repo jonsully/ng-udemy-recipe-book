@@ -5,7 +5,7 @@
         <app-shopping-edit></app-shopping-edit>
         <hr>
         <ul class="list-group">
-            <li class="list-group-item list-group-item-action d-flex" *ngFor="let ingredient of ingredients2">
+            <li class="list-group-item list-group-item-action d-flex" *ngFor="let ingredient of ingredients">
                 <a style="cursor: pointer;">{{ingredient.name}} ({{ingredient.amount}}<span
                         *ngIf="ingredient.unit !== ''" class="ms-1">{{ingredient.unit}}</span>)</a>
             </li>
