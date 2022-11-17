@@ -10,34 +10,23 @@ import { ShoppingListService } from 'src/app/shared/shopping-list.service';
 })
 export class ShoppingEditComponent implements OnInit {
   ingredients: Ingredient[] = this.shoppingListService.getIngredients();
-  @ViewChild('f') ingredientForm: NgForm;
+  @ViewChild('f') form: NgForm;
 
   constructor(private shoppingListService: ShoppingListService) {}
 
-  ngOnInit(): void {
-    console.log(this.ingredientForm);
-  }
-
-  // onAddIngredient() {
-  //   const ingName = this.theName.nativeElement.value;
-  //   const ingAmount = this.theAmount.nativeElement.value;
-  //   const newIngredient = new Ingredient(ingName, ingAmount, '');
-  //   this.shoppingListService.addIngredient(newIngredient);
-  //   console.log(this.shoppingListService.ingredients);
-  // }
+  ngOnInit(): void {}
 
   onDeleteIngredient() {
     this.shoppingListService.removeIngredient();
   }
 
   clearIngredientFields() {
-    this.ingredientForm.reset();
+    this.form.reset();
   }
 
-  onSubmit(data: FormData) {
-    const ingName = this.ingredientForm.value.name;
-    const ingAmount = this.ingredientForm.value.amount;
-    const newIngredient = new Ingredient(ingName, ingAmount, '');
+  onSubmit(form: NgForm) {
+    const value = form.value;
+    const newIngredient = new Ingredient(value.name, value.amount, '');
     this.shoppingListService.addIngredient(newIngredient);
   }
 }
