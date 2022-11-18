@@ -15,13 +15,13 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe('BURGER', 'Burger with cheese', 'assets/recipe.png', [
-      new Ingredient('Bread', 1, ''),
-      new Ingredient('Meat', 1, ''),
-      new Ingredient('Cheese', 1, ''),
+      new Ingredient('Bread', 1),
+      new Ingredient('Meat', 1),
+      new Ingredient('Cheese', 1),
     ]),
     new Recipe('A Test Recipe 2', 'This is another test', 'assets/recipe.png', [
-      { name: 'fignut', amount: 2, unit: 'cups' },
-      { name: 'bread', amount: 2, unit: 'cups' },
+      { name: 'fignut', amount: 2 },
+      { name: 'bread', amount: 2 },
     ]),
   ];
 

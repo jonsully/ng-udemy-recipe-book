@@ -51,7 +51,7 @@ export class RecipeEditComponent implements OnInit {
       this.recipeName,
       this.recipeDescription,
       this.recipeImage,
-      [{ name: 'Bread', amount: 1, unit: 'cup' }]
+      [{ name: 'Bread', amount: 1 }]
     );
     this.recipeService.addRecipe(recipe);
   }
